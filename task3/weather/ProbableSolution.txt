@@ -1,0 +1,8 @@
+The goal is to inject a variable into the user space, based on the data retrieved from the frontend. To achieve that, a Kernel extension is required.
+There will be two components to this Extension: the JupyterLab extension and the IPython Kernel Extension.
+
+The proposed flow will be like this:
+
+User types in search query in the JE. JE retrieves data from API.
+JE retrieves all kernels and sends a Comm message of the JSON.
+IKE of each kernels receive the Comm message and adds the data into the User space.

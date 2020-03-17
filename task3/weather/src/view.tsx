@@ -3,7 +3,9 @@ import { InputGroup } from '@jupyterlab/ui-components';
 
 const BASE_URL = "http://www.mocky.io/v2/5e7081573000006b007a2f42?query={query}";
 
-interface MyProps { }
+interface MyProps { 
+    onDataRetrieved: (data: any) => void
+}
 
 interface MyState {
     searchQuery: string;
@@ -78,6 +80,7 @@ class WeatherView extends React.Component<MyProps, MyState> {
                 }
             })
             .then(data => {
+                this.props.onDataRetrieved(data);
                 this.setState({ 
                     loading: false,
                     result: data
