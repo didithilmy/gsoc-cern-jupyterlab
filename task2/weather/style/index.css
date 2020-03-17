@@ -1,0 +1,40 @@
+.jp-WeatherPanel {
+    background-color: white;
+    padding: 8px;
+}
+
+.jp-Weather-loading {
+    padding: 32px;
+    text-align: center;
+}
+
+.jp-Weather-search-bar {
+    margin-top: 16px;
+}
+
+.jp-Weather-details {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.jp-Weather-details .location {
+    font-size: 18pt;
+    text-align: center;
+}
+
+.jp-Weather-details .temperature {
+    font-size: 32pt;
+    text-align: center;
+}
+
+.jp-Weather-details .temperature {
+    font-size: 32pt;
+    text-align: center;
+}
+
+.jp-Weather-details .status {
+    text-align: center;
+}
