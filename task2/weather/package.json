@@ -33,8 +33,7 @@
   "dependencies": {
     "@jupyterlab/application": "^2.0.0",
     "@lumino/widgets": "^1.11.1",
-    "@types/react-dom": "^16.9.5",
-    "axios": "^0.19.2"
+    "@types/react-dom": "^16.9.5"
   },
   "devDependencies": {
     "rimraf": "^2.6.1",

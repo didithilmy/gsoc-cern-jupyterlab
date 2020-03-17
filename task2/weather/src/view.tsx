@@ -1,6 +1,5 @@
 import React from 'react';
 import { InputGroup } from '@jupyterlab/ui-components';
-import axios from 'axios';
 
 const BASE_URL = "http://www.mocky.io/v2/5e7081573000006b007a2f42?query={query}";
 
@@ -69,12 +68,20 @@ class WeatherView extends React.Component<MyProps, MyState> {
 
     retrieveData() {
         this.setState({ loading: true });
-        axios.get(BASE_URL.replace('{query}', this.state.searchQuery))
+        const url = BASE_URL.replace('{query}', this.state.searchQuery);
+        fetch(url)
             .then(response => {
-                console.log('Success', response.data);
+                if (response.ok) {
+                    return response.json()
+                } else {
+                    this.setState({ loading: false }); 
+                }
+            })
+            .then(data => {
+                console.log('Success', data);
                 this.setState({ 
                     loading: false,
-                    result: response.data
+                    result: data
                 });
             })
             .catch(e => {
