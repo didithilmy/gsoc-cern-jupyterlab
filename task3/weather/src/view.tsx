@@ -74,7 +74,7 @@ class WeatherView extends React.Component<MyProps, MyState> {
         fetch(url)
             .then(response => {
                 if (response.ok) {
-                    return response.json()
+                    return response.json();
                 } else {
                     this.setState({ loading: false }); 
                 }

@@ -20,6 +20,5 @@ class WeatherDataConnector():
             self.handle_comm_message(msg)
 
 def load_ipython_extension(ipython):
-    # Push loader to user space
     connector = WeatherDataConnector(ipython)
     connector.register_comm()

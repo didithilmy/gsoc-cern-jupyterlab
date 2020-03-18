@@ -21,6 +21,7 @@ const PANEL_CLASS = 'jp-WeatherPanel';
 export class WeatherPanel extends VDomRenderer {
     app: JupyterFrontEnd;
     commSet: Set<string>;
+    weatherData?: any;
 
     constructor(options: WeatherPanelOptions) {
       super();
@@ -42,8 +43,9 @@ export class WeatherPanel extends VDomRenderer {
     }
 
     private _weatherDataRetrieved(weatherData: any) {
-      const sessions = toArray(this.app.serviceManager.sessions.running());
+      this.weatherData = weatherData;
 
+      const sessions = toArray(this.app.serviceManager.sessions.running());
       sessions.forEach(session => {
         sendCommToKernel(weatherData, session.kernel);
       })
@@ -52,7 +54,12 @@ export class WeatherPanel extends VDomRenderer {
     private _onRunningChanged(sender: Session.IManager, models: Iterable<Session.IModel>): void {
       const newModels = this._findNewElements(Array.from(models), this.commSet);
       newModels.forEach(model => {
-        setupKernelComm(model.kernel);
+        setupKernelComm(model.kernel)
+          .then(() => {
+            if (!!this.weatherData) {
+              sendCommToKernel(this.weatherData, model.kernel);
+            }
+          });
         this.commSet.add(model.kernel.id);
       })
     }
