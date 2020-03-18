@@ -9,12 +9,6 @@ A JupyterLab extension to get weather data
 
 * JupyterLab >= 2.0
 
-## Install
-
-```bash
-jupyter labextension install weather
-```
-
 ## Contributing
 
 ### Install
@@ -46,10 +40,3 @@ jlpm watch
 # Run jupyterlab in watch mode in one terminal tab
 jupyter lab --watch
 ```
-
-### Uninstall
-
-```bash
-jupyter labextension uninstall weather
-```
-

@@ -1,8 +1,7 @@
-# weather
+# JupyterLab Weather Extension
 
-![Github Actions Status](https://github.com/didithilmy/gsoc-weather-jupyterlab/workflows/Build/badge.svg)
-
-A JupyterLab extension to get weather data
+**NOT FOR PRODUCTION USE**
+A JupyterLab extension to get weather data, built as a technical test for Google Summer of Code 2020.
 
 
 ## Requirements
@@ -12,7 +11,7 @@ A JupyterLab extension to get weather data
 ## Install
 
 ```bash
-jupyter labextension install weather
+jupyter labextension install @didithilmy/gsoc-cern-weather
 ```
 
 ## Contributing
@@ -50,6 +49,6 @@ jupyter lab --watch
 ### Uninstall
 
 ```bash
-jupyter labextension uninstall weather
+jupyter labextension uninstall @didithilmy/gsoc-cern-weather
 ```
 

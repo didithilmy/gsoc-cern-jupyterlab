@@ -7,8 +7,7 @@ The weather data is retrieved from [weatherstack](https://weatherstack.com), but
 ### Installation
 Execute the following script
 ```sh
-$ cd ./task3/weather
-$ jupyter labextension install .
+$ jupyter labextension install @didithilmy/gsoc-cern-weather
 ```
 
 ### How it works
