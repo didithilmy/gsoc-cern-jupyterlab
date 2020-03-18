@@ -38,3 +38,12 @@
 .jp-Weather-details .status {
     text-align: center;
 }
+
+.jp-Weather-instructions {
+    margin-top: 16px;
+    margin-bottom: 16px;;
+}
+
+.jp-Weather-code {
+    color: #c62828;
+}

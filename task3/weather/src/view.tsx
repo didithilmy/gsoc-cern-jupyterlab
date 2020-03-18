@@ -1,7 +1,7 @@
 import React from 'react';
 import { InputGroup } from '@jupyterlab/ui-components';
 import { ISettingRegistry } from'@jupyterlab/settingregistry';
-import { BASE_URL, EXTENSION_ID } from './const';
+import { BASE_URL, EXTENSION_ID, VARIABLE_NAME } from './const';
 
 interface MyProps { 
     settingRegistry: ISettingRegistry;
@@ -46,6 +46,9 @@ class WeatherView extends React.Component<MyProps, MyState> {
                         value={this.state.searchQuery}
                         rightIcon="search"
                     />
+                </div>
+                <div className="jp-Weather-instructions">
+                    To load the data from notebook, just use the variable <code className="jp-Weather-code">{ VARIABLE_NAME }</code>.
                 </div>
                 { this.state.loading && (
                     <div className="jp-Weather-loading">

@@ -1,6 +1,6 @@
 {
   "name": "@didithilmy/gsoc-cern-weather",
-  "version": "0.1.1",
+  "version": "0.2.4",
   "description": "A JupyterLab extension to get weather data",
   "keywords": [
     "jupyter",

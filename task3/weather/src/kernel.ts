@@ -1,7 +1,5 @@
 import { KernelManager, Kernel } from '@jupyterlab/services';
-
-const COMM_NAME = "WeatherDataConnector";
-const VARIABLE_NAME = "weather_data"
+import { VARIABLE_NAME, COMM_NAME } from './const';
 
 const code = 
 `
