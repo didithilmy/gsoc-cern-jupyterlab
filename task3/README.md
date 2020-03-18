@@ -2,7 +2,11 @@
 This folder contains the source code of JupyterLab extension that accesses weather data and makes it accessible to the kernel through variable that is injected to the user's namespace.
 
 ### Installation
-// TODO
+Execute the following script
+```sh
+$ cd ./task3/weather
+$ jupyter labextension install .
+```
 
 ### How it works
 The extension is made up almost entirely using TypeScript using the [extension-cookiecutter-ts](https://github.com/jupyterlab/extension-cookiecutter-ts) boilerplate.
@@ -15,6 +19,7 @@ It consists of several components:
 The extension works like this:
 - It listens to `runningChanged` signal to know when a new Kernel is spawned.
     - When a new Kernel is spawned, `Kernel.IKernelConnection.requestExecute` is called to inject the comm receiver into the kernel. The following code is invoked in the kernel:
+  
     ```python
     class WeatherDataConnector():
         def __init__(self, ipython):
