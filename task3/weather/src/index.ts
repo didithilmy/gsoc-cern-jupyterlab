@@ -1,20 +1,22 @@
 import { JupyterFrontEnd, JupyterFrontEndPlugin, ILabShell } from '@jupyterlab/application';
-// import { KernelManager } from '@jupyterlab/services';
+import { ISettingRegistry } from '@jupyterlab/settingregistry';
 import { ICommandPalette } from '@jupyterlab/apputils';
 import { listIcon } from '@jupyterlab/ui-components';
 import { WeatherPanel } from'./panel';
+import { EXTENSION_ID } from './const';
 
 /**
  * Initialization data for the weather extension.
  */
 const extension: JupyterFrontEndPlugin<void> = {
-  id: 'weather',
+  id: EXTENSION_ID,
   autoStart: true,
-  requires: [ICommandPalette, ILabShell],
-  activate: (app: JupyterFrontEnd, palette: ICommandPalette, labShell: ILabShell) => {
+  requires: [ICommandPalette, ILabShell, ISettingRegistry],
+  activate: async (app: JupyterFrontEnd, palette: ICommandPalette, labShell: ILabShell, settingRegistry: ISettingRegistry) => {
     const panel = new WeatherPanel({
       app,
-      widgetId: 'weather',
+      settingRegistry,
+      widgetId: `${EXTENSION_ID}:weather`,
       widgetIcon: listIcon,
       widgetTitle: 'Weather'
     });

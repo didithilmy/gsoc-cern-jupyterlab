@@ -2,13 +2,14 @@
 This folder contains the source code of JupyterLab extension that accesses weather data and makes it accessible to the kernel through variable that is injected to the user's namespace.
 
 ### Data Source
-The weather data is retrieved from [weatherstack](https://weatherstack.com), but for the purpose of this exercise, the response data is served by Mocky in the following URL: (http://www.mocky.io/v2/5e7081573000006b007a2f42)[http://www.mocky.io/v2/5e7081573000006b007a2f42]. The URL is configurable on (view.tsx)[weather/src/view.tsx]
+The weather data is retrieved from [weatherstack](https://weatherstack.com). Please create your own API Access Key and follow the instructions on the sidebar to configure the extension.
 
 ### Installation
 Execute the following script
 ```sh
 $ jupyter labextension install @didithilmy/gsoc-cern-weather
 ```
+Then, create a Weatherstack API Access Key, and follow the instruction on the sidebar panel to configure the API Access Key.
 
 ### How it works
 The extension is made up almost entirely using TypeScript using the [extension-cookiecutter-ts](https://github.com/jupyterlab/extension-cookiecutter-ts) boilerplate.

@@ -1,0 +1,16 @@
+{
+  "jupyter.lab.setting-icon": "ui-components:settings",
+  "jupyter.lab.setting-icon-label": "Weather Data",
+  "title": "Weather Data",
+  "description": "Weather Data settings.",
+  "properties": {
+    "apiAccessKey": {
+      "title": "Weatherstack API Access Key",
+      "description": "Enter Weatherstack API Access Key, which can be retrieved from weatherstack.com",
+      "default": "",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "type": "object"
+}
